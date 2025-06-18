@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pieteikt mājaslapu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo" />
+  </div>
+
+  <!-- Valodu pogas -->
+  <div class="language-switcher">
+    <button onclick="setLanguage('lv')">LV</button>
+    <button onclick="setLanguage('ru')">RU</button>
+    <button onclick="setLanguage('en')">ENG</button>
+  </div>
+
+  <div class="container">
+    <video autoplay loop muted playsinline class="background-clip">
+      <source src="images/video.mp4" type="video/mp4">
+      Tavs pārlūks neatbalsta video.
+    </video>
+
+    <div class="content form-content">
+      <h1 id="title">Pieteikt mājaslapu</h1>
+
+      <!-- ✅ Forma ar Formspree integrāciju -->
+      <form 
+        action="https://formspree.io/f/xrbklpqw" 
+        method="POST" 
+        class="form-box"
+        id="submitForm"
+      >
+        <input type="text" name="name" id="name" placeholder="Vārds, uzvārds" required />
+        <input type="email" name="email" id="email" placeholder="Tavs epasts" required />
+        <textarea name="message" id="message" placeholder="Tava ziņa" required></textarea>
+        <button type="submit" id="submitBtn">Nosūtīt</button>
+      </form>
+
+      <!-- Atpakaļ uz sākumu poga -->
+      <a href="index.html" class="back-button">← Atpakaļ uz sākumu</a>
+    </div>
+  </div>
+
+  <script>
+    // ✅ Tulkotāju objekts
+    const translations = {
+      lv: {
+        title: "Pieteikt mājaslapu",
+        submitBtn: "Nosūtīt",
+        namePlaceholder: "Vārds, uzvārds",
+        emailPlaceholder: "Tavs epasts",
+        messagePlaceholder: "Tava ziņa"
+      },
+      ru: {
+        title: "Зарегистрировать сайт",
+        submitBtn: "Отправить",
+        namePlaceholder: "Имя, фамилия",
+        emailPlaceholder: "Ваш email",
+        messagePlaceholder: "Ваше сообщение"
+      },
+      en: {
+        title: "Submit Your Website",
+        submitBtn: "Send",
+        namePlaceholder: "Full Name",
+        emailPlaceholder: "Your Email",
+        messagePlaceholder: "Your Message"
+      }
+    };
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+
+      localStorage.setItem("preferredLang", lang);
+      document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("submitBtn").innerText = translations[lang].submitBtn;
+      document.getElementById("name").placeholder = translations[lang].namePlaceholder;
+      document.getElementById("email").placeholder = translations[lang].emailPlaceholder;
+      document.getElementById("message").placeholder = translations[lang].messagePlaceholder;
+    }
+
+    // ✅ Automātiski uzstāda saglabāto valodu
+    window.onload = function () {
+      const savedLang = localStorage.getItem("preferredLang") || "lv";
+      setLanguage(savedLang);
+    };
+  </script>
+
+</body>
+</html>
