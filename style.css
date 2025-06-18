@@ -246,3 +246,57 @@ body {
 .back-button:hover {
   background-color: #ffffff;
 }
+@media screen and (max-width: 768px) {
+  .content h1 {
+    font-size: 40px;
+    margin-top: 100px;
+    padding: 0 10px;
+  }
+
+  .language-switcher {
+    top: 12px;
+    right: 12px;
+    gap: 6px;
+    padding: 6px 10px;
+    transform: scale(0.9);
+  }
+
+  .language-switcher button {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .logo {
+    top: 12px;
+    left: 12px;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+  .form-content {
+    padding: 20px;
+  }
+
+  .form-box {
+    max-width: 90%;
+    gap: 12px;
+  }
+
+  .form-box input,
+  .form-box textarea,
+  .form-box button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .header {
+    padding: 10px 15px;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+}
+
