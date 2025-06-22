@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakti</title>
+  <link rel="stylesheet" href="style.css">
+    <title>Cenas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 60px;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .language-switcher button {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            margin: 0 3px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher button:hover,
+        .language-switcher button.active {
+            background-color: white;
+            color: black;
+        }
+
+        .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .back-button {
+            margin-top: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('lv')" id="btn-lv">LV</button>
+      <button onclick="setLanguage('ru')" id="btn-ru">RU</button>
+      <button onclick="setLanguage('en')" id="btn-en">ENG</button>
+    </div>
+  </header>
+
+    <!-- Fona video -->
+    <video autoplay muted loop class="background-video">
+        <source src="images/video.mp4" type="video/mp4">
+        Tava pārlūkprogramma neatbalsta video.
+    </video>
+
+    <!-- Logo -->
+    <img src="images/logo.png" alt="Logo" class="logo">
+
+
+
+    <!-- Saturs -->
+    <div class="content">
+        <h1 id="priceTitle">Cenas</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th id="serviceCol">Pakalpojums</th>
+                    <th id="descCol">Apraksts</th>
+                    <th id="priceCol">Cena (EUR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="service1">Landing Page</td>
+                    <td id="desc1">Vienas lapas mājaslapa ar kontaktformu</td>
+                    <td>30€</td>
+                </tr>
+                <tr>
+                    <td id="service2">Biznesa Mājaslapa</td>
+                    <td id="desc2">Līdz 5 sadaļām, responsīvs dizains</td>
+                    <td>100€</td>
+                </tr>
+                <tr>
+                    <td id="service3">E-komercija</td>
+                    <td id="desc3">Interneta veikals ar maksājumu integrāciju</td>
+                    <td>150€</td>
+                </tr>
+                <tr>
+                    <td id="service4">Domēna reģistrācija</td>
+                    <td id="desc4">.lv vai .com domēna iegāde un konfigurācija</td>
+                    <td>20€/gadā</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="back-button" onclick="window.location.href='index.html'" id="backBtn">Atpakaļ</button>
+    </div>
+
+    <script>
+        const translations = {
+            lv: {
+                priceTitle: "Cenas",
+                serviceCol: "Pakalpojums",
+                descCol: "Apraksts",
+                priceCol: "Cena (EUR)",
+                service1: "Landing Page",
+                desc1: "Vienas lapas mājaslapa ar kontaktformu",
+                service2: "Biznesa Mājaslapa",
+                desc2: "Līdz 5 sadaļām, responsīvs dizains",
+                service3: "E-komercija",
+                desc3: "Interneta veikals ar maksājumu integrāciju",
+                service4: "Domēna reģistrācija",
+                desc4: ".lv vai .com domēna iegāde un konfigurācija",
+                backBtn: "Atpakaļ"
+            },
+            ru: {
+                priceTitle: "Цены",
+                serviceCol: "Услуга",
+                descCol: "Описание",
+                priceCol: "Цена (EUR)",
+                service1: "Лендинг",
+                desc1: "Одностраничный сайт с формой обратной связи",
+                service2: "Бизнес-сайт",
+                desc2: "До 5 разделов, адаптивный дизайн",
+                service3: "Интернет-магазин",
+                desc3: "Магазин с интеграцией оплаты",
+                service4: "Регистрация домена",
+                desc4: "Покупка и настройка домена .lv или .com",
+                backBtn: "Назад"
+            },
+            en: {
+                priceTitle: "Prices",
+                serviceCol: "Service",
+                descCol: "Description",
+                priceCol: "Price (EUR)",
+                service1: "Landing Page",
+                desc1: "Single-page website with contact form",
+                service2: "Business Website",
+                desc2: "Up to 5 sections, responsive design",
+                service3: "E-commerce",
+                desc3: "Online store with payment integration",
+                service4: "Domain Registration",
+                desc4: "Purchase and setup of .lv or .com domain",
+                backBtn: "Back"
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem("preferredLang", lang);
+            const t = translations[lang];
+
+            document.getElementById("priceTitle").innerText = t.priceTitle;
+            document.getElementById("serviceCol").innerText = t.serviceCol;
+            document.getElementById("descCol").innerText = t.descCol;
+            document.getElementById("priceCol").innerText = t.priceCol;
+
+            document.getElementById("service1").innerText = t.service1;
+            document.getElementById("desc1").innerText = t.desc1;
+            document.getElementById("service2").innerText = t.service2;
+            document.getElementById("desc2").innerText = t.desc2;
+            document.getElementById("service3").innerText = t.service3;
+            document.getElementById("desc3").innerText = t.desc3;
+            document.getElementById("service4").innerText = t.service4;
+            document.getElementById("desc4").innerText = t.desc4;
+
+            document.getElementById("backBtn").innerText = t.backBtn;
+
+            // Update active button
+            document.querySelectorAll(".language-switcher button").forEach(btn => {
+                btn.classList.remove("active");
+            });
+            document.getElementById("btn-" + lang).classList.add("active");
+        }
+
+        // Apply saved language on load
+        window.onload = function () {
+            const savedLang = localStorage.getItem("preferredLang") || "lv";
+            setLanguage(savedLang);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakti</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+      <span class="brand-name">BrandUp Boost</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('lv')" id="btn-lv">LV</button>
+      <button onclick="setLanguage('ru')" id="btn-ru">RU</button>
+      <button onclick="setLanguage('en')" id="btn-en">ENG</button>
+    </div>
+  </header>
+
+<video autoplay muted loop class="background-clip">
+  <source src="images/video.mp4" type="video/mp4">
+</video>
+
+<!-- Pārklājums virs video -->
+<div class="video-overlay"></div>
+
+  <main class="contact-wrapper">
+    <div class="contact-box">
+      <h1 id="contactTitle">Kontakti</h1>
+      <p id="contactText">Droši raksti man, ja vēlies mājaslapu:</p>
+      <p id="emailLabel">
+        E-pasts: <a href="mailto:brandupboost@gmail.com">brandupboost@gmail.com</a>
+      </p>
+      <div class="instagram">
+        <a href="https://www.instagram.com/brandupboost/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="32" height="32">
+        </a>
+      </div>
+     <button onclick="window.location.href='index.html'" class="main-button" id="backBtn">
+  Atpakaļ
+</button>
+    </div>
+  </main>
+
+  <script src="language.js"></script>
+</body>
+</html>

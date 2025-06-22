@@ -9,11 +9,11 @@
 </head>
 <body>
 
-  <!-- Header with logo and language switcher -->
+  <!-- Header -->
   <header class="header">
     <div class="logo">
       <img src="images/logo.png" alt="Your Business Logo" />
-      <span class="brand-name"></span>
+      <span class="brand-name">Brandupboost</span>
     </div>
     <div class="language-switcher">
       <button onclick="setLanguage('lv')">LV</button>
@@ -22,19 +22,27 @@
     </div>
   </header>
 
-  <!-- Background video section -->
+  <!-- Background Video -->
   <div class="container">
     <video autoplay loop muted playsinline class="background-clip">
       <source src="images/video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
+    <!-- Central Content -->
     <div class="content">
-      <h1 id="title">Explore More</h1>
-      <a href="learn.html" id="startBtn">Start Learning</a>
+      <h1 id="title">Brandupboost</h1>
+      <a href="learn.html" id="startBtn" class="btn">Pieteikt mājaslapu</a>
     </div>
   </div>
 
+  <!-- Bottom Links -->
+  <footer class="bottom-links">
+    <a href="contacts.html" class="btn" id="contactsBtn">Kontakti</a>
+    <a href="pricing.html" class="btn" id="pricingBtn">Cenas</a>
+  </footer>
+
   <script src="language.js"></script>
+
 </body>
 </html>
